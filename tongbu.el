@@ -110,9 +110,15 @@ The script element will be added at the end of the HTML."
 
       <h3>Upload file</h3>
 
-      <form action='%s' method='post' enctype='multipart/form-data'>
+      <script type='text/javascript'>
+          function formReset() {
+              document.getElementById('FileUploadForm').reset();
+          }
+      </script>
+      <form id='FileUploadForm' action='%s' method='post' enctype='multipart/form-data'>
         <input type='file' name='file' multiple='multiple' required>
         <input type='submit' value='Upload'>
+        <input type='button' value='Clean' onclick='formReset()'/>
       </form>
 
       <h3>Directory listing for %s</h3>
